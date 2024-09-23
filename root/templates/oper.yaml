@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mycharttest
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    helm.sh/hook: pre-install, pre-upgrade
+spec:
+  project: rr
+  source:
+    repoURL: https://github.com/eaera-com/mychart.git
+    targetRevision: HEAD
+    path: /apps/mychart
+    helm:
+      valueFiles:
+        - ./values.yaml
+  destination:
+    name: hn
+    namespace: rr
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
