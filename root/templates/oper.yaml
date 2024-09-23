@@ -15,7 +15,7 @@ spec:
       valueFiles:
         - ./values.yaml
   destination:
-    name: hn
+    name: proto-1
     namespace: rr
   syncPolicy:
     syncOptions:
