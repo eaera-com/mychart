@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/eaera-com/mychart.git
     targetRevision: HEAD
-    path: apps/mychart
+    path: /apps/mychart
     helm:
       valueFiles:
         - ./values.yaml
