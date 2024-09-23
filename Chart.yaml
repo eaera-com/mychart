@@ -26,4 +26,4 @@ appVersion: "1.16.0"
 dependencies:
   - name: mylibchart
     version: 0.2.0
-    repository: https://github.com/eaera-com/mylibchart
+    repository: "https://github.com/eaera-com/mylibchart"
